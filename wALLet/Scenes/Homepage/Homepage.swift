@@ -14,21 +14,13 @@ struct Homepage: View {
         NavigationStack {
             List {
                 NavigationLink {
-                    PassEditor()
+                    PassCreate()
                 } label: {
                     Image(systemName: "wallet.pass.fill")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
                     Text("Pass Maker")
                 }
-                
-                NavigationLink {
-//                    BarcodeScanner()
-                } label: {
-                    Image(systemName: "barcode")
-                    Text("Barcode Scanner")
-                }
-
             }
         }
         .navigationTitle("Homepage")

@@ -6,29 +6,45 @@
 //
 
 import SwiftUI
+import VisionKit
 
 struct PassCreate: View {
-    var body: some View {
-        VStack {
-            Button {
-                addPass()
-            } label: {
-                Text("Add Pass")
-            }
-
-        }
-        .onAppear{ setup() }
-    }
-    
-    
-    
-    private func setup() {
+    @State var recognizedItem: RecognizedItem? = nil
         
+    private var barcode: RecognizedItem.Barcode? {
+        switch recognizedItem {
+        case .barcode(let barcode):
+            return barcode
+        case .text( _):
+            return nil
+        default:
+            return nil
+        }
     }
     
     
-    private func addPass() {
-        print(#function)
+    
+    var body: some View {
+        List {
+            NavigationLink {
+                BarcodeScanner(recognizedItem: $recognizedItem)
+            } label: {
+                Text("Scan Barcode")
+            }
+            
+            if (barcode != nil) {
+                HStack {
+                    Text("\(barcode?.observation.symbology.rawValue ?? ""): - ")
+                    Text(barcode?.payloadStringValue ?? "")
+                }
+            }
+        }
+        .onAppear{ viewSetup() }
+    }
+    
+    
+    private func viewSetup() {
+        
     }
 }
 
