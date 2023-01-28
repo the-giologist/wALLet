@@ -15,7 +15,8 @@
 		E251A6B82963D66B00CCEBF7 /* wALLetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251A6B72963D66B00CCEBF7 /* wALLetUITests.swift */; };
 		E251A6BA2963D66B00CCEBF7 /* wALLetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251A6B92963D66B00CCEBF7 /* wALLetUITestsLaunchTests.swift */; };
 		E258F5DA2984C8BF004B349D /* PassCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E258F5D92984C8BF004B349D /* PassCreate.swift */; };
-		E258F5DC2984CA1F004B349D /* BarcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E258F5DB2984CA1F004B349D /* BarcodeScanner.swift */; };
+		E258F5DC2984CA1F004B349D /* PassEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E258F5DB2984CA1F004B349D /* PassEditor.swift */; };
+		E258F5DF2984D526004B349D /* BarcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E258F5DE2984D526004B349D /* BarcodeScanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,8 @@
 		E251A6B72963D66B00CCEBF7 /* wALLetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wALLetUITests.swift; sourceTree = "<group>"; };
 		E251A6B92963D66B00CCEBF7 /* wALLetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wALLetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E258F5D92984C8BF004B349D /* PassCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCreate.swift; sourceTree = "<group>"; };
-		E258F5DB2984CA1F004B349D /* BarcodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanner.swift; sourceTree = "<group>"; };
+		E258F5DB2984CA1F004B349D /* PassEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassEditor.swift; sourceTree = "<group>"; };
+		E258F5DE2984D526004B349D /* BarcodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		E251A69B2963D66A00CCEBF7 /* wALLet */ = {
 			isa = PBXGroup;
 			children = (
+				E258F5DD2984D501004B349D /* UIViewRepresentables */,
 				E258F5D62984C7B7004B349D /* Scenes */,
 				E251A69C2963D66A00CCEBF7 /* wALLetApp.swift */,
 				E251A6A02963D66B00CCEBF7 /* Assets.xcassets */,
@@ -152,9 +155,17 @@
 			isa = PBXGroup;
 			children = (
 				E258F5D92984C8BF004B349D /* PassCreate.swift */,
-				E258F5DB2984CA1F004B349D /* BarcodeScanner.swift */,
+				E258F5DB2984CA1F004B349D /* PassEditor.swift */,
 			);
 			path = PassMaker;
+			sourceTree = "<group>";
+		};
+		E258F5DD2984D501004B349D /* UIViewRepresentables */ = {
+			isa = PBXGroup;
+			children = (
+				E258F5DE2984D526004B349D /* BarcodeScanner.swift */,
+			);
+			path = UIViewRepresentables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,9 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E251A69F2963D66A00CCEBF7 /* Homepage.swift in Sources */,
-				E258F5DC2984CA1F004B349D /* BarcodeScanner.swift in Sources */,
+				E258F5DC2984CA1F004B349D /* PassEditor.swift in Sources */,
 				E251A69D2963D66A00CCEBF7 /* wALLetApp.swift in Sources */,
 				E258F5DA2984C8BF004B349D /* PassCreate.swift in Sources */,
+				E258F5DF2984D526004B349D /* BarcodeScanner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +463,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"wALLet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This lets us scan barcodes for you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -479,6 +492,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"wALLet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This lets us scan barcodes for you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

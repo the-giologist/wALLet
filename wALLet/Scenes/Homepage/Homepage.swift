@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PassKit
+import AVFoundation
 
 struct Homepage: View {
     
@@ -23,7 +23,7 @@ struct Homepage: View {
                 }
                 
                 NavigationLink {
-                    Text("Barcode Scanner")
+                    BarcodeScanner()
                 } label: {
                     Image(systemName: "barcode")
                     Text("Barcode Scanner")
@@ -31,8 +31,16 @@ struct Homepage: View {
 
             }
         }
+        .navigationTitle("Homepage")
+        .onAppear { setup() }
     }
     
+    
+    private func setup() {
+        AVCaptureDevice.requestAccess(for: .video) { response in
+            print(#function)
+        }
+    }
 }
 
 
