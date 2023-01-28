@@ -9,6 +9,7 @@ import SwiftUI
 import VisionKit
 
 struct BarcodeScanner: UIViewControllerRepresentable {
+    @Binding var recognizedItem: RecognizedItem?
     
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let view = DataScannerViewController(recognizedDataTypes:[.barcode()],
@@ -29,7 +30,7 @@ struct BarcodeScanner: UIViewControllerRepresentable {
     
     
     func makeCoordinator() -> Coordinator {
-        Coordinator()
+        Coordinator(recognizedItem: $recognizedItem)
     }
     
     
@@ -49,17 +50,18 @@ struct BarcodeScanner: UIViewControllerRepresentable {
     
     //MARK: - Coordinator
     class Coordinator: NSObject, DataScannerViewControllerDelegate {
-//        @Binding var recognizedItems: [String]
+        @Binding var recognizedItem: RecognizedItem?
         
-        override init() {
-            
+        init(recognizedItem: Binding<RecognizedItem?>) {
+            self._recognizedItem = recognizedItem
         }
         
         
         
         
         func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
-            print(#function)
+            recognizedItem = item
+            dataScanner.navigationController?.popViewController(animated: true)
         }
         
         

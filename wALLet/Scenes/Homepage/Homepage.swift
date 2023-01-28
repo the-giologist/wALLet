@@ -14,7 +14,7 @@ struct Homepage: View {
         NavigationStack {
             List {
                 NavigationLink {
-                    PassCreate()
+                    PassEditor()
                 } label: {
                     Image(systemName: "wallet.pass.fill")
                         .imageScale(.large)
@@ -23,7 +23,7 @@ struct Homepage: View {
                 }
                 
                 NavigationLink {
-                    BarcodeScanner()
+//                    BarcodeScanner()
                 } label: {
                     Image(systemName: "barcode")
                     Text("Barcode Scanner")

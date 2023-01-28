@@ -6,25 +6,50 @@
 //
 
 import SwiftUI
+import VisionKit
 
 struct PassEditor: View {
+    @State var recognizedItem: RecognizedItem? = nil
     
     
-    var body: some View {
-        List {
-            BarcodeScanner()
-//            Button {
-//                scanBarcode()
-//            } label: {
-//                Text("Scan Barcode")
-//            }
-
+    private var barcode: RecognizedItem.Barcode? {
+        switch recognizedItem {
+        case .barcode(let barcode):
+            return barcode
+        default:
+            return nil
         }
     }
     
+    var body: some View {
+        List {
+            NavigationLink {
+                BarcodeScanner(recognizedItem: $recognizedItem)
+            } label: {
+                Text("Scan Barcode")
+            }
+            
+            if (barcode != nil) {
+                HStack {
+                    Text("\(barcode?.observation.symbology.rawValue ?? ""): - ")
+                    Text(barcode?.payloadStringValue ?? "")
+                }
+            }
+
+        }
+        .onAppear{ updateView() }
+    }
     
-    private func scanBarcode() {
-        
+    
+    private func updateView() {
+        if let recognizedItem = recognizedItem {
+            switch recognizedItem {
+            case .barcode(let barcode):
+                print(barcode.payloadStringValue)
+            case .text(let text):
+                print(text.transcript)
+            }
+        }
     }
     
     
