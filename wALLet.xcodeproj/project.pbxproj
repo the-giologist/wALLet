@@ -94,6 +94,7 @@
 		E251A69B2963D66A00CCEBF7 /* wALLet */ = {
 			isa = PBXGroup;
 			children = (
+				E258F5D62984C7B7004B349D /* Scenes */,
 				E251A69C2963D66A00CCEBF7 /* wALLetApp.swift */,
 				E251A69E2963D66A00CCEBF7 /* ContentView.swift */,
 				E251A6A02963D66B00CCEBF7 /* Assets.xcassets */,
@@ -125,6 +126,13 @@
 				E251A6B92963D66B00CCEBF7 /* wALLetUITestsLaunchTests.swift */,
 			);
 			path = wALLetUITests;
+			sourceTree = "<group>";
+		};
+		E258F5D62984C7B7004B349D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
