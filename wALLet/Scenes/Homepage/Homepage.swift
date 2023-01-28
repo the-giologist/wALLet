@@ -8,18 +8,20 @@
 import SwiftUI
 import PassKit
 
-struct ContentView: View {
+struct Homepage: View {
+    
     var body: some View {
         NavigationStack {
             List {
                 NavigationLink {
-                    PassView()
+                    PassCreate()
                 } label: {
-                    Image(systemName: "globe")
+                    Image(systemName: "wallet.pass.fill")
                         .imageScale(.large)
                         .foregroundColor(.accentColor)
-                    Text("Hello, Gio!")
+                    Text("Pass Maker")
                 }
+                
                 NavigationLink {
                     Text("Barcode Scanner")
                 } label: {
@@ -29,43 +31,23 @@ struct ContentView: View {
 
             }
         }
-        
     }
+    
 }
 
+
+
+
+
+
+
+
+
+
+
+//MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-    }
-}
-
-
-
-
-
-
-
-struct PassView : View {
-    var body: some View {
-        VStack {
-            Button {
-                addPass()
-            } label: {
-                Text("Add Pass")
-            }
-
-        }
-        .onAppear{ setup() }
-    }
-    
-    
-    
-    private func setup() {
-        
-    }
-    
-    
-    private func addPass() {
-        print(#function)
+        Homepage()
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct wALLetApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Homepage()
         }
     }
 }
