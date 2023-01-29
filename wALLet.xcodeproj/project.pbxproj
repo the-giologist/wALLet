@@ -16,6 +16,8 @@
 		E251A6BA2963D66B00CCEBF7 /* wALLetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E251A6B92963D66B00CCEBF7 /* wALLetUITestsLaunchTests.swift */; };
 		E258F5DA2984C8BF004B349D /* PassCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E258F5D92984C8BF004B349D /* PassCreate.swift */; };
 		E258F5DF2984D526004B349D /* BarcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E258F5DE2984D526004B349D /* BarcodeScanner.swift */; };
+		E2E9FF602986377000A3D500 /* GenericPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E9FF5F2986377000A3D500 /* GenericPass.swift */; };
+		E2E9FF622986389900A3D500 /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E9FF612986389900A3D500 /* Barcode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		E251A6B92963D66B00CCEBF7 /* wALLetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wALLetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E258F5D92984C8BF004B349D /* PassCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCreate.swift; sourceTree = "<group>"; };
 		E258F5DE2984D526004B349D /* BarcodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanner.swift; sourceTree = "<group>"; };
+		E2E9FF5F2986377000A3D500 /* GenericPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPass.swift; sourceTree = "<group>"; };
+		E2E9FF612986389900A3D500 /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 		E251A69B2963D66A00CCEBF7 /* wALLet */ = {
 			isa = PBXGroup;
 			children = (
+				E2E9FF5E2986373C00A3D500 /* Models */,
 				E258F5DD2984D501004B349D /* UIViewRepresentables */,
 				E258F5D62984C7B7004B349D /* Scenes */,
 				E251A69C2963D66A00CCEBF7 /* wALLetApp.swift */,
@@ -163,6 +168,15 @@
 				E258F5DE2984D526004B349D /* BarcodeScanner.swift */,
 			);
 			path = UIViewRepresentables;
+			sourceTree = "<group>";
+		};
+		E2E9FF5E2986373C00A3D500 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2E9FF5F2986377000A3D500 /* GenericPass.swift */,
+				E2E9FF612986389900A3D500 /* Barcode.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +311,8 @@
 			files = (
 				E251A69F2963D66A00CCEBF7 /* Homepage.swift in Sources */,
 				E251A69D2963D66A00CCEBF7 /* wALLetApp.swift in Sources */,
+				E2E9FF622986389900A3D500 /* Barcode.swift in Sources */,
+				E2E9FF602986377000A3D500 /* GenericPass.swift in Sources */,
 				E258F5DA2984C8BF004B349D /* PassCreate.swift in Sources */,
 				E258F5DF2984D526004B349D /* BarcodeScanner.swift in Sources */,
 			);

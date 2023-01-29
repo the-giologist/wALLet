@@ -15,7 +15,7 @@ struct PassCreate: View {
         switch recognizedItem {
         case .barcode(let barcode):
             return barcode
-        case .text( _):
+        case .text(_):
             return nil
         default:
             return nil
@@ -25,7 +25,11 @@ struct PassCreate: View {
     
     
     var body: some View {
-        List {
+        
+        VStack {
+            
+            
+            
             NavigationLink {
                 BarcodeScanner(recognizedItem: $recognizedItem)
             } label: {
