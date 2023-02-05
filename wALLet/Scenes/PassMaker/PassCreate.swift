@@ -28,7 +28,16 @@ struct PassCreate: View {
         
         VStack {
             
-            
+            VStack {
+                HStack {
+                    Text("Text")
+                    Spacer()
+                }
+                Spacer()
+                Text("test")
+            }
+            .frame(width: 100, height: 300)
+            .background(Color(.systemRed).opacity(0.5))
             
             NavigationLink {
                 BarcodeScanner(recognizedItem: $recognizedItem)
@@ -44,6 +53,7 @@ struct PassCreate: View {
             }
         }
         .onAppear{ viewSetup() }
+        
     }
     
     
